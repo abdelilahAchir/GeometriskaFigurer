@@ -45,11 +45,11 @@ namespace GeometriskaFigurer
         {
             if (IsSquare)
             {
-                return $"Square@({_center.X},{_center.Y}): width = {_size.X} heigth = {_size.Y} Is square: {IsSquare}";
+                return $"       Square@( Center: ({_center.X} {_center.Y}) width: ({_size.X}) heigth: ({_size.Y}) Is square?: ({IsSquare}))";
 
             }else
             {
-                return $"Rectangle@({_center.X},{_center.Y}): width = {_size.X} heigth = {_size.Y} Is square: {IsSquare}";
+                return $"       Rectangle@( Center: ({_center.X} {_center.Y}) width: ({_size.X}) heigth: ({_size.Y}) Is square?: ({IsSquare}))";
 
             }
         }

@@ -15,7 +15,6 @@ namespace GeometriskaFigurer
             cube,
             sphere,
             triangle
-            
         }
         public static Shape GenerateShape()
         {

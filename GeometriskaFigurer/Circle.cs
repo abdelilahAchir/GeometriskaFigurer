@@ -18,7 +18,7 @@ namespace GeometriskaFigurer
 
         public override string ToString()
         {
-            return $"Circle@({Center.X}, {Center.Y}): radius = {_radius}";
+            return $"       Circle@( Center: ({Center.X} {Center.Y}) radius: ({_radius})";
         }
     }
 }

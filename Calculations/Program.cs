@@ -97,7 +97,7 @@ internal class Program
             }
         }
         int indexName = mostRepeated.ToString().IndexOf("@");
-        Console.WriteLine($"Most repeated shape is {mostRepeated.ToString().Substring(0, indexName).ToUpper()} by : {maxValue}\n".ToUpper());
+        Console.WriteLine($"        Most repeated shape is {mostRepeated.ToString().Substring(0, indexName).ToUpper()} by : {maxValue}\n".ToUpper());
     }
 
     private static void shapeBiggestVolume(Shape[] shapes)
@@ -121,7 +121,7 @@ internal class Program
             }
         }
         int indexName = shapeHeightsVolume.ToString().IndexOf("@");
-        Console.WriteLine($"The shape with heights volume is: {shapeHeightsVolume.ToString().Substring(0, indexName)} by : {biggestVolume}\n".ToUpper());
+        Console.WriteLine($"        The shape with heights volume is: {shapeHeightsVolume.ToString().Substring(0, indexName)} by : {biggestVolume}\n".ToUpper());
     }
 
     private static void printOutAllShapes(Shape[] shapes)
@@ -141,15 +141,7 @@ internal class Program
             avrgAreaOfShapes += shapes[i].Area;
         }
         avrgAreaOfShapes = MathF.Round(avrgAreaOfShapes / shapes.Length, 2);
-        if (float.IsNaN(avrgAreaOfShapes))
-        {
-            Console.WriteLine($"The average area of all shapes is: {0}\n".ToUpper());
-
-        }
-        else
-        {
-            Console.WriteLine($"The average area of all shapes is: {avrgAreaOfShapes}\n".ToUpper());
-        }
+        Console.WriteLine($"        The average area of all shapes is: {avrgAreaOfShapes}\n".ToUpper());
     }
 
     private static void trianglesCircumferenceSum(Shape[] shapes)
@@ -162,26 +154,26 @@ internal class Program
                 circumferenceSum += triangle.Circumference;
             }
         }
-        Console.WriteLine($"The sum of Triangles circumference is: {circumferenceSum}\n".ToUpper());
+        Console.WriteLine($"        The sum of Triangles circumference is: {circumferenceSum}\n".ToUpper());
     }
 
     private static void createTwentyShapes(Shape[] shapes, ConsoleKey consoleKey)
     {
         if (consoleKey == ConsoleKey.Y)
         {
-            Console.WriteLine("\nEnter the center point 1 of the the 3D shapes");
+            Console.WriteLine("\n       Enter the center point 1 of the the 3D shapes");
             float centerPoint3D1 = 0;
             float.TryParse(Console.ReadLine(), out centerPoint3D1);
-            Console.WriteLine("Enter the center point 2 of the the 3D shapes");
+            Console.WriteLine("     Enter the center point 2 of the the 3D shapes");
             float centerPoint3D2 = 0;
             float.TryParse(Console.ReadLine(), out centerPoint3D2);
-            Console.WriteLine("Enter the center point 3 of the the 3D shapes");
+            Console.WriteLine("     Enter the center point 3 of the the 3D shapes");
             float centerPoint3D3 = 0;
             float.TryParse(Console.ReadLine(), out centerPoint3D3);
-            Console.WriteLine("Enter the center point 1 of the the TRIANGLE");
+            Console.WriteLine("     Enter the center point 1 of the the TRIANGLE");
             float centerPoint1Triangle = 0;
             float.TryParse(Console.ReadLine(), out centerPoint1Triangle);
-            Console.WriteLine("Enter the center point 2 of the the TRIANGLE");
+            Console.WriteLine("     Enter the center point 2 of the the TRIANGLE");
             float centerPoint2Triangle = 0;
             float.TryParse(Console.ReadLine(), out centerPoint2Triangle);
             Vector2 vector2D = new(centerPoint1Triangle, centerPoint2Triangle);

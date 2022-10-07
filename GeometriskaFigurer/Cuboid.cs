@@ -49,13 +49,13 @@ namespace GeometriskaFigurer
         {
             if (!IsCube)
             {
-                return $"Cuboid @({_center.X},{_center.Y},{_center.Z}): w = "
-               + $"{_width},h = {_height}, l = {_depth} (Is cube : {IsCube})";
+                return $"       Cuboid @( Center: ({_center.X} {_center.Y} {_center.Z}) Width: "
+               + $"({_width}) Height: ({_height}) Length: ({_depth}) Is cube?: ({IsCube}))";
             }
             else
             {
-                return $"Cube @({_center.X},{_center.Y},{_center.Z}): w = "
-               + $"{_width},h = {_height}, l = {_depth} (Is cube : {IsCube})";
+                return $"       Cube @( Center: ({_center.X} {_center.Y} {_center.Z}) Width: "
+               + $"({_width}) Height: ({_height}) Length: ({_depth}) Is cube?: ({IsCube}))";
             }
         }
     }

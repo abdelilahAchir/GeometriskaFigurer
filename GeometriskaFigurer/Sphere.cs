@@ -20,7 +20,7 @@ namespace GeometriskaFigurer
 
         public override string ToString()
         {
-            return $"Sphere @({_center.X},{_center.Y},{_center.Z}): r ={_radius}";
+            return $"       Sphere @( Center: ({_center.X} {_center.Y} {_center.Z})   Radius: ({_radius}))";
         }
     }
 }
