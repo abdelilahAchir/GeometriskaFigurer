@@ -10,7 +10,7 @@ namespace GeometriskaFigurer
 
         public override Vector3 Center => _center;
 
-        public override float Area => 2 * ((_depth * _height) + (_width * _height) + (_height * _depth));
+        public override float Area => 2 * ((_depth * _width) + (_width * _height) + (_depth * _height));
 
         public bool IsCube
         {

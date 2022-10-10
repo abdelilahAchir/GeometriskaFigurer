@@ -11,9 +11,13 @@ namespace GeometriskaFigurer
         {
             get
             {
-                float s = (_p1.Length() + _p2.Length() + _p3.Length()) / 2;
+                ////float s = (_p1.Length() + _p2.Length() + _p3.Length()) / 2;
 
-                return MathF.Sqrt(s * (s - _p1.Length()) * (s - _p2.Length()) * (s - _p3.Length()));
+                ////return MathF.Sqrt(s * (s - _p1.Length()) * (s - _p2.Length()) * (s - _p3.Length()));
+                return (1F / 4F) * MathF.Sqrt((_p1.Length() + _p2.Length() + _p3.Length()) *
+                                                (-_p1.Length() + _p2.Length() + _p3.Length() *
+                                                 _p1.Length() - _p2.Length() + _p3.Length() *
+                                                  _p1.Length() + _p2.Length() - _p3.Length()));
             }
         }
       

@@ -72,7 +72,7 @@ namespace GeometriskaFigurer
                 return null;
             }
         }
-        public static Shape GenerateShape(Vector3 centerPoint3DShapes, Vector2 centerPointTriangle)
+        public static Shape GenerateShape(Vector3 centerPoint3DShapes)
         {
             Random random = new Random();
             Vector3 centerShape3D;
@@ -123,7 +123,7 @@ namespace GeometriskaFigurer
             }
             else if (shape == shapes.triangle)
             {
-                Vector2 centerTriangle = centerPointTriangle;
+                Vector2 centerTriangle = new(centerPoint3DShapes.X, centerPoint3DShapes.Y);
                 trianglePoint3 = new Vector2((3 * centerTriangle.X) - trianglePoint1.X - trianglePoint2.X, (3 * centerTriangle.Y) - trianglePoint1.Y - trianglePoint2.Y);
                 Shape triangle = new Triangle(trianglePoint1, trianglePoint2, trianglePoint3);
                 return triangle;

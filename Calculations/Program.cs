@@ -42,7 +42,6 @@ internal class Program
             if (shapes[i] is Triangle triangle)
             {
                 triangleQuantities++;
-
                 shapesQuantity.Add(triangle, triangleQuantities);
             }
             else if (shapes[i] is Circle circle)
@@ -169,18 +168,11 @@ internal class Program
             float.TryParse(Console.ReadLine(), out centerPoint3D2);
             Console.WriteLine("     Enter the center point 3 of the the 3D shapes");
             float centerPoint3D3 = 0;
-            float.TryParse(Console.ReadLine(), out centerPoint3D3);
-            Console.WriteLine("     Enter the center point 1 of the the TRIANGLE");
-            float centerPoint1Triangle = 0;
-            float.TryParse(Console.ReadLine(), out centerPoint1Triangle);
-            Console.WriteLine("     Enter the center point 2 of the the TRIANGLE");
-            float centerPoint2Triangle = 0;
-            float.TryParse(Console.ReadLine(), out centerPoint2Triangle);
-            Vector2 vector2D = new(centerPoint1Triangle, centerPoint2Triangle);
+            float.TryParse(Console.ReadLine(), out centerPoint3D3);           
             Vector3 vector3D = new(centerPoint3D1, centerPoint3D2, centerPoint3D3);
             for (int i = 0; i < shapes.Length; i++)
             {
-                Shape shape = Shape.GenerateShape(vector3D, vector2D);
+                Shape shape = Shape.GenerateShape(vector3D);
                 shapes[i] = shape;
             }
         }

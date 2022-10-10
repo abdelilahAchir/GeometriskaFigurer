@@ -4,7 +4,7 @@ namespace GeometriskaFigurer
 {
     public class Sphere : Shape3D
     {
-        public override float Volume => (4 / 3) * MathF.PI * MathF.Pow(_radius, 3);
+        public override float Volume => 4F / 3F * ( MathF.PI * MathF.Pow(_radius, 3));
 
         public override Vector3 Center => _center;
 
