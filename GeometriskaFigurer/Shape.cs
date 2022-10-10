@@ -31,6 +31,28 @@ namespace GeometriskaFigurer
             float widthSquare = NextFloatHelpers.NextFloat();
             float heightWidthDepthCube = NextFloatHelpers.NextFloat();
             float radius = NextFloatHelpers.NextFloat(1.0f, 10.0f);
+            bool isItATriangle = false;
+            bool validSide1 = trianglePoint1.Length() + trianglePoint2.Length() > trianglePoint3.Length();
+            bool validSide2 = trianglePoint1.Length() + trianglePoint3.Length() > trianglePoint2.Length();
+            bool validSide3 = trianglePoint3.Length() + trianglePoint2.Length() > trianglePoint1.Length();
+
+            while (!isItATriangle)
+            {
+                if (validSide1 && validSide2 && validSide3)
+                {
+                    isItATriangle = true;
+                }
+                else
+                {
+                    isItATriangle = false;
+                    trianglePoint1 = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
+                    trianglePoint2 = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
+                    trianglePoint3 = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
+                    validSide1 = trianglePoint1.Length() + trianglePoint2.Length() > trianglePoint3.Length();
+                    validSide2 = trianglePoint1.Length() + trianglePoint3.Length() > trianglePoint2.Length();
+                    validSide3 = trianglePoint3.Length() + trianglePoint2.Length() > trianglePoint1.Length();
+                }
+            }
 
             if (shape == shapes.circle)
             {
@@ -82,9 +104,29 @@ namespace GeometriskaFigurer
             Vector2 sizeShape2D = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
             Vector2 trianglePoint1 = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
             Vector2 trianglePoint2 = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
-            Vector2 trianglePoint3;
+            Vector2 centerTriangle = new(centerPoint3DShapes.X, centerPoint3DShapes.Y);
+            Vector2 trianglePoint3 = new Vector2((3 * centerTriangle.X) - trianglePoint1.X - trianglePoint2.X, (3 * centerTriangle.Y) - trianglePoint1.Y - trianglePoint2.Y);
+            bool isItATriangle = false;
+            bool validSide1 = trianglePoint1.Length() + trianglePoint2.Length() > trianglePoint3.Length();
+            bool validSide2 = trianglePoint1.Length() + trianglePoint3.Length() > trianglePoint2.Length();
+            bool validSide3 = trianglePoint3.Length() + trianglePoint2.Length() > trianglePoint1.Length();
 
-
+            while (!isItATriangle)
+            {
+                if (validSide1 && validSide2 && validSide3)
+                {
+                    isItATriangle = true;
+                }
+                else
+                {
+                    isItATriangle = false;
+                    trianglePoint1 = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
+                    trianglePoint2 = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
+                    validSide1 = trianglePoint1.Length() + trianglePoint2.Length() > trianglePoint3.Length();
+                    validSide2 = trianglePoint1.Length() + trianglePoint3.Length() > trianglePoint2.Length();
+                    validSide3 = trianglePoint3.Length() + trianglePoint2.Length() > trianglePoint1.Length();
+                }
+            }
             float widthSquare = NextFloatHelpers.NextFloat();
             float heightWidthDepthCube = NextFloatHelpers.NextFloat();
             float radius = NextFloatHelpers.NextFloat(1.0f, 10.0f);
@@ -123,8 +165,7 @@ namespace GeometriskaFigurer
             }
             else if (shape == shapes.triangle)
             {
-                Vector2 centerTriangle = new(centerPoint3DShapes.X, centerPoint3DShapes.Y);
-                trianglePoint3 = new Vector2((3 * centerTriangle.X) - trianglePoint1.X - trianglePoint2.X, (3 * centerTriangle.Y) - trianglePoint1.Y - trianglePoint2.Y);
+
                 Shape triangle = new Triangle(trianglePoint1, trianglePoint2, trianglePoint3);
                 return triangle;
             }
