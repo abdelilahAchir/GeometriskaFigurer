@@ -100,7 +100,7 @@ namespace GeometriskaFigurer
             Vector3 centerShape3D;
             shapes shape = (shapes)random.Next(0, 7);
             Vector3 heightWidthDepthCuboid = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
-            Vector2 centerShape2D = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
+            Vector2 centerShape2D = new(centerPoint3DShapes.X, centerPoint3DShapes.Y);
             Vector2 sizeShape2D = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
             Vector2 trianglePoint1 = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
             Vector2 trianglePoint2 = new(NextFloatHelpers.NextFloat(), NextFloatHelpers.NextFloat());
