@@ -6,7 +6,7 @@ namespace GeometriskaFigurer
     {
         public override float Circumference => (MathF.Sqrt(MathF.Pow(_p2.X - _p1.X, 2) + MathF.Pow(_p2.Y - _p1.Y, 2))) +
                                                (MathF.Sqrt( MathF.Pow(_p3.X - _p2.X  ,2) + MathF.Pow(_p3.Y - _p2.Y,2))) + 
-                                               (MathF.Sqrt(MathF.Pow(_p3.X - _p1.X,2) + MathF.Pow(_p3.Y - _p1.Y,2)));  // + _p2.Length() + _p3.Length();
+                                               (MathF.Sqrt(MathF.Pow(_p3.X - _p1.X,2) + MathF.Pow(_p3.Y - _p1.Y,2))); 
 
         public override Vector3 Center => new Vector3((_p1.X + _p2.X + _p3.X) / 3, (_p1.Y + _p2.Y + _p3.Y) / 3, 0);
         public override float Area => MathF.Abs((_p1.X * (_p2.Y - _p3.Y) + _p2.X * (_p3.Y - _p1.Y) + _p3.X * (_p1.Y - _p2.Y)) / 2);
